@@ -1,0 +1,78 @@
+﻿<Window x:Class="ThucHanhKiemThuPhanMem.DanhSachMonHoc"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ThucHanhKiemThuPhanMem"
+        WindowStartupLocation="CenterScreen"
+        mc:Ignorable="d"
+        
+        Title="Danh sách môn học" Height="450" Width="800">
+    <Grid Margin="10px">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="8*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+
+
+
+        <DataGrid  Grid.Row="0" Grid.Column="0" 
+                  
+                   Name="dataGridDanhSachMonHoc" 
+                   HorizontalAlignment="Stretch" 
+                  Height="auto"  
+                  VerticalAlignment="Stretch" 
+                  Width="auto" 
+                  AutoGenerateColumns="False" 
+                  ColumnWidth="*" 
+                   CanUserAddRows="False"
+                  EnableRowVirtualization="false" 
+                  EnableColumnVirtualization="false"
+                   Padding="5px"
+                   SelectionUnit="FullRow"
+                   IsReadOnly="True"
+                   SelectionChanged="DataGridDanhSachMonHoc_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Mã môn học" Binding="{Binding MaMonHoc}" />
+                <DataGridTextColumn Header="Tên môn học" Binding="{Binding TenMon}"/>
+                <DataGridTextColumn Header="Mã ngành" Binding="{Binding MaNganh}"/>
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid Grid.Row="0" Grid.Column="1" Name="dataGridDanhSachLop" HorizontalAlignment="Stretch" 
+                  Height="auto"  
+                  VerticalAlignment="Stretch" 
+                  Width="auto" 
+                  AutoGenerateColumns="False" 
+                  ColumnWidth="*" 
+                  IsReadOnly="True"
+                  CanUserAddRows="False"
+                  EnableRowVirtualization="false" 
+                  EnableColumnVirtualization="false"
+                  Padding="5px">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Mã lớp" Binding="{Binding MaLop}"/>
+                <DataGridTextColumn Header="Tên lớp" Binding="{Binding TenLop}"/>
+
+                <DataGridTextColumn Header="Mã giảng viên" Binding="{Binding MaGiangVien}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Grid Grid.Row="1" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0"  Width="100" Height="30" Content="Tạo lớp" Name="bntPhanLop" Click="BntPhanLop_Click"/>
+            <Button Grid.Column="1" Width="100" Height="30" Content="Cập nhật lớp"  Name="bntCapNhatLop" Click="bntCapNhatLop_Click"/>
+            <Button Grid.Column="2" Width="100" Height="30" Content="Hủy lớp"  Name="bntHuyLop" Click="bntHuyLop_Click"/>
+            <Button Grid.Column="3" Width="100" Height="30" Content="Trờ về" Name="bntBack" Click="bntBack_Click" />
+        </Grid>
+
+    </Grid>
+</Window>

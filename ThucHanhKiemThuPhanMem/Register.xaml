@@ -1,0 +1,35 @@
+﻿<Window x:Class="ThucHanhKiemThuPhanMem.Register"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ThucHanhKiemThuPhanMem"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="Đăng ký" Height="400" Width="300">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition/>
+            <RowDefinition Height="0.6*"/>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition Height="0.6*"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label FontSize="30" Content="Đăng Ký" VerticalAlignment="Center" HorizontalContentAlignment="Center" FontWeight="Bold"/>
+        
+        <Label Grid.Row="1" Content="Tên đăng nhập" VerticalAlignment="Bottom"/>
+        <Label Grid.Row="2" Content="(6>15 ký tự, không bắt đầu bằng số và không ký tự đặt biệt)" FontSize="9" VerticalAlignment="Top"/>
+        <TextBox Grid.Row="3" VerticalContentAlignment="Center" Height="30" Name="txtUsername"/>
+        
+        <Label Grid.Row="4" Content="Mật khẩu" VerticalAlignment="Bottom"/>
+        <Label Grid.Row="5" Content="(8>20 ký tự, ít nhất 1 số và 1 ký tự đặt biệt)"  FontSize="9" VerticalAlignment="Top"/>
+        <PasswordBox Grid.Row="6" VerticalContentAlignment="Center" Height="30" Name="txtPassword"/>
+        <Button Grid.Row="7" Height="30"  Width="200" Content="Đăng ký" Name="btnDangKy" Click="btnDangKy_Click"/>
+        <Button Grid.Row="8" Height="30"  Width="200" Content="Có tài khoản" Name="btnBack" Click="btnBack_Click"/>
+
+    </Grid>
+</Window>
